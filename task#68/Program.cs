@@ -14,6 +14,7 @@ int Ackerman(int m, int n)
       return Ackerman(m - 1, A(m, n - 1));
 }
 
+
 Console.Clear();
 Console.Write("Введите число: ");
 int m = int.Parse(Console.ReadLine()!);
