@@ -3,25 +3,20 @@
 // M = 4; N = 8. -> 30
 
 
-int summaCifr(int m, int n) // a = 12345
+void SumRec(int m, int n, int sum)
 {
-if (m < n)
-return m;
-return summaCifr(m / 10) + m % 10;
+    if (m > n) 
+    {
+        Console.WriteLine($"Сумма числел в промежутке от m до n = {sum}");
+        return;
+    }
+    sum = sum + (m++);
+    SumRec(m, n, sum);
 }
 
 Console.Clear();
-Console.Write("Введите число: ");
+Console.Write("Введите число m: ");
 int m = int.Parse(Console.ReadLine()!);
-Console.Write("Введите число: ");
+Console.Write("Введите число n: ");
 int n = int.Parse(Console.ReadLine()!);
-//Console.WriteLine(summaCifr());
-
-
-// int SumRec(int n)
-// {
-//     if (n == 0) return 0;
-//     else return n + SumRec(n - 1);
-// }
-
-// Console.WriteLine(SumRec(10)); // 55
+SumRec(m, n, 0);
